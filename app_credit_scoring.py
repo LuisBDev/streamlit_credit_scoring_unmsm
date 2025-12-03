@@ -478,7 +478,7 @@ def main():
                 st.metric("Especificidad", f"{metrics['specificity']:.1%}")
             
             st.markdown("""
-            <div class="info-box">
+            <div style="background-color: #34495e; color: #ffffff; padding: 1rem; border-radius: 5px; border-left: 3px solid #1abc9c; margin: 1rem 0;">
             <strong>Proyecto de Tesis</strong><br>
             Desarrollo de un Modelo de Credit Scoring basado en Random Forest 
             para la Evaluación del Riesgo Crediticio en el Sector de 
@@ -904,10 +904,10 @@ def main():
             scenario_df.columns = ['Valor']
             scenario_df.index.name = 'Variable'
             
-            col1, col2 = st.columns([1, 2])
+            col1, col2 = st.columns([2, 1])
             
             with col1:
-                st.dataframe(scenario_df, height=400)
+                st.dataframe(scenario_df, height=400, use_container_width=True)
             
             with col2:
                 # Gráfico comparativo
