@@ -23,7 +23,6 @@ import os
 
 st.set_page_config(
     page_title="Credit Scoring - Microfinanzas Perú",
-    page_icon="💳",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -412,7 +411,7 @@ def main():
     
     # Header principal
     st.markdown(
-        '<div class="main-header">💳 Sistema de Credit Scoring - Microfinanzas Perú</div>',
+        '<div class="main-header">Sistema de Credit Scoring - Microfinanzas Perú</div>',
         unsafe_allow_html=True
     )
     
@@ -424,38 +423,38 @@ def main():
         return
     
     # Sidebar para navegación
-    st.sidebar.title("📋 Navegación")
+    st.sidebar.title("Navegación")
     page = st.sidebar.radio(
         "Selecciona una opción:",
-        ["🏠 Inicio", "🔮 Predicción Individual", "📊 Escenarios de Prueba", 
-         "📈 Métricas del Modelo", "ℹ️ Información"]
+        ["Inicio", "Predicción Individual", "Escenarios de Prueba", 
+         "Métricas del Modelo", "Información"]
     )
     
     # =================================================================
     # PÁGINA: INICIO
     # =================================================================
     
-    if page == "🏠 Inicio":
+    if page == "Inicio":
         st.header("Bienvenido al Sistema de Credit Scoring")
         
         col1, col2 = st.columns(2)
         
         with col1:
             st.markdown("""
-            ### 🎯 Objetivo del Sistema
+            ### Objetivo del Sistema
             
             Este sistema evalúa el riesgo crediticio de clientes potenciales en el 
             sector de microfinanzas en Perú utilizando un modelo de **Random Forest** 
             optimizado.
             
-            ### ✨ Características Principales
+            ### Características Principales
             
             - **Alta precisión**: 93.9% de accuracy
             - **Excelente discriminación**: 96.2% ROC-AUC
             - **Interpretable**: Identificación de factores clave
             - **Validado**: Validación cruzada rigurosa
             
-            ### 📊 Capacidades
+            ### Capacidades
             
             - Predicción de probabilidad de default
             - Clasificación de riesgo (Bajo/Medio/Alto)
@@ -464,7 +463,7 @@ def main():
             """)
         
         with col2:
-            st.markdown("### 📈 Métricas del Modelo")
+            st.markdown("### Métricas del Modelo")
             metrics = load_model_metrics()
             
             col_m1, col_m2 = st.columns(2)
@@ -480,7 +479,7 @@ def main():
             
             st.markdown("""
             <div class="info-box">
-            <strong>🎓 Proyecto de Tesis</strong><br>
+            <strong>Proyecto de Tesis</strong><br>
             Desarrollo de un Modelo de Credit Scoring basado en Random Forest 
             para la Evaluación del Riesgo Crediticio en el Sector de 
             Microfinanzas en Perú
@@ -488,25 +487,25 @@ def main():
             """, unsafe_allow_html=True)
         
         st.markdown("---")
-        st.info("👈 Usa el menú lateral para navegar entre las diferentes funcionalidades del sistema")
+        st.info("Usa el menú lateral para navegar entre las diferentes funcionalidades del sistema")
     
     # =================================================================
     # PÁGINA: PREDICCIÓN INDIVIDUAL
     # =================================================================
     
-    elif page == "🔮 Predicción Individual":
+    elif page == "Predicción Individual":
         st.header("Predicción de Riesgo Crediticio Individual")
         st.markdown("Ingresa los datos del cliente para obtener una evaluación de riesgo crediticio.")
         
         with st.form("prediction_form"):
-            st.subheader("📝 Información del Cliente")
+            st.subheader("Información del Cliente")
             
             # Crear tabs para organizar los inputs
             tab1, tab2, tab3, tab4 = st.tabs([
-                "💰 Información Financiera", 
-                "👤 Información Personal",
-                "💳 Historial Crediticio",
-                "📊 Indicadores Calculados"
+                "Información Financiera", 
+                "Información Personal",
+                "Historial Crediticio",
+                "Indicadores Calculados"
             ])
             
             with tab1:
@@ -711,7 +710,7 @@ def main():
                         disabled=True
                     )
             
-            submitted = st.form_submit_button("🔮 Realizar Predicción", use_container_width=True)
+            submitted = st.form_submit_button("Realizar Predicción", use_container_width=True)
             
             if submitted:
                 # Preparar datos de entrada
@@ -758,7 +757,7 @@ def main():
                 
                 # Mostrar resultados
                 st.markdown("---")
-                st.subheader("📊 Resultados de la Evaluación")
+                st.subheader("Resultados de la Evaluación")
                 
                 col1, col2, col3 = st.columns(3)
                 
@@ -785,7 +784,7 @@ def main():
                     )
                 
                 # Visualización de riesgo
-                st.markdown("### 🎯 Clasificación de Riesgo")
+                st.markdown("### Clasificación de Riesgo")
                 
                 if risk_category == "BAJO":
                     st.markdown(f'<div class="risk-low">🟢 RIESGO {risk_category}<br>{risk_message}</div>', 
@@ -819,7 +818,7 @@ def main():
                 st.plotly_chart(fig, use_container_width=True)
                 
                 # Factores principales
-                st.markdown("### 🔍 Factores Más Relevantes para Esta Evaluación")
+                st.markdown("### Factores Más Relevantes para Esta Evaluación")
                 
                 feature_importance = load_feature_importance()
                 
@@ -846,7 +845,7 @@ def main():
     # PÁGINA: ESCENARIOS DE PRUEBA
     # =================================================================
     
-    elif page == "📊 Escenarios de Prueba":
+    elif page == "Escenarios de Prueba":
         st.header("Escenarios de Prueba Pre-configurados")
         st.markdown("Selecciona un escenario de prueba para ver cómo funciona el modelo con diferentes perfiles de cliente.")
         
@@ -857,7 +856,7 @@ def main():
             list(scenarios.keys())
         )
         
-        if st.button("🚀 Ejecutar Escenario", use_container_width=True):
+        if st.button("Ejecutar Escenario", use_container_width=True):
             scenario_data = scenarios[scenario_name]
             
             # Preparar datos
@@ -871,7 +870,7 @@ def main():
             
             # Mostrar resultados
             st.markdown("---")
-            st.subheader(f"📊 Resultados: {scenario_name}")
+            st.subheader(f"Resultados: {scenario_name}")
             
             col1, col2, col3, col4 = st.columns(4)
             
@@ -889,17 +888,17 @@ def main():
             
             # Clasificación de riesgo
             if risk_category == "BAJO":
-                st.markdown(f'<div class="risk-low">🟢 RIESGO {risk_category}<br>{risk_message}</div>', 
+                st.markdown(f'<div class="risk-low">RIESGO {risk_category}<br>{risk_message}</div>', 
                            unsafe_allow_html=True)
             elif risk_category == "MEDIO":
-                st.markdown(f'<div class="risk-medium">🟡 RIESGO {risk_category}<br>{risk_message}</div>', 
+                st.markdown(f'<div class="risk-medium">RIESGO {risk_category}<br>{risk_message}</div>', 
                            unsafe_allow_html=True)
             else:
-                st.markdown(f'<div class="risk-high">🔴 RIESGO {risk_category}<br>{risk_message}</div>', 
+                st.markdown(f'<div class="risk-high">RIESGO {risk_category}<br>{risk_message}</div>', 
                            unsafe_allow_html=True)
             
             # Mostrar datos del escenario
-            st.markdown("### 📋 Datos del Cliente (Escenario)")
+            st.markdown("### Datos del Cliente (Escenario)")
             
             scenario_df = pd.DataFrame([scenario_data]).T
             scenario_df.columns = ['Valor']
@@ -941,9 +940,9 @@ def main():
         
         # Comparación de escenarios
         st.markdown("---")
-        st.subheader("📊 Comparación de Todos los Escenarios")
+        st.subheader("Comparación de Todos los Escenarios")
         
-        if st.button("🔄 Comparar Todos los Escenarios", use_container_width=True):
+        if st.button("Comparar Todos los Escenarios", use_container_width=True):
             results = []
             
             for name, data in scenarios.items():
@@ -989,14 +988,14 @@ def main():
     # PÁGINA: MÉTRICAS DEL MODELO
     # =================================================================
     
-    elif page == "📈 Métricas del Modelo":
+    elif page == "Métricas del Modelo":
         st.header("Métricas de Rendimiento del Modelo")
         st.markdown("Resultados obtenidos durante el entrenamiento y validación del modelo Random Forest.")
         
         metrics = load_model_metrics()
         
         # Métricas principales
-        st.subheader("📊 Métricas Principales (Conjunto de Prueba)")
+        st.subheader("Métricas Principales (Conjunto de Prueba)")
         
         col1, col2, col3 = st.columns(3)
         
@@ -1040,7 +1039,7 @@ def main():
         st.plotly_chart(fig, use_container_width=True)
         
         # Validación cruzada
-        st.subheader("🔄 Resultados de Validación Cruzada (10-Fold)")
+        st.subheader("Resultados de Validación Cruzada (10-Fold)")
         
         cv_metrics = {
             "Accuracy": "0.9385 ± 0.0014",
@@ -1053,10 +1052,10 @@ def main():
         cv_df = pd.DataFrame(list(cv_metrics.items()), columns=['Métrica', 'Valor (Media ± Std)'])
         st.dataframe(cv_df, use_container_width=True)
         
-        st.info("✅ El modelo muestra alta estabilidad con coeficientes de variación < 0.01 en todas las métricas")
+        st.info("El modelo muestra alta estabilidad con coeficientes de variación < 0.01 en todas las métricas")
         
         # Cumplimiento de objetivos
-        st.subheader("🎯 Cumplimiento de Objetivos de la Tesis")
+        st.subheader("Cumplimiento de Objetivos de la Tesis")
         
         objectives = {
             "Accuracy > 90%": (metrics['accuracy'] > 0.90, metrics['accuracy']),
@@ -1073,9 +1072,9 @@ def main():
                 st.markdown(f"{value:.4f} ({value*100:.2f}%)")
             with col3:
                 if achieved:
-                    st.success("✅ CUMPLIDO")
+                    st.success("CUMPLIDO")
                 else:
-                    st.warning("⚠️ PARCIAL")
+                    st.warning("PARCIAL")
         
         cumplidos = sum([a for a, _ in objectives.values()])
         total = len(objectives)
@@ -1083,7 +1082,7 @@ def main():
         st.markdown(f"### Resultado Final: {cumplidos}/{total} objetivos cumplidos ({cumplidos/total*100:.0f}%)")
         
         # Feature Importance
-        st.subheader("🔍 Importancia de Variables (Top 15)")
+        st.subheader("Importancia de Variables (Top 15)")
         
         feature_importance = load_feature_importance()
         
@@ -1101,7 +1100,7 @@ def main():
         
         # Interpretación
         st.markdown("""
-        ### 💡 Interpretación de Variables Clave
+        ### Interpretación de Variables Clave
         
         **1. Stability Score (33.08%)**: El factor más importante. Mide la estabilidad general del cliente 
         en términos financieros y laborales.
@@ -1123,17 +1122,17 @@ def main():
     # PÁGINA: INFORMACIÓN
     # =================================================================
     
-    elif page == "ℹ️ Información":
+    elif page == "Información":
         st.header("Información del Sistema")
         
         st.markdown("""
-        ### 📚 Sobre el Proyecto
+        ### Sobre el Proyecto
         
         Este sistema es parte de la tesis titulada **"Desarrollo de un Modelo de Credit Scoring 
         basado en Random Forest para la Evaluación del Riesgo Crediticio en el Sector de 
         Microfinanzas en Perú"**.
         
-        ### 🎯 Objetivos del Modelo
+        ### Objetivos del Modelo
         
         El modelo tiene como objetivo:
         
@@ -1149,7 +1148,7 @@ def main():
         4. **Reducir la morosidad**: Identificar con precisión clientes riesgosos para minimizar 
            pérdidas.
         
-        ### 🔬 Metodología
+        ### Metodología
         
         El desarrollo del modelo siguió la metodología **CRISP-DM**:
         
@@ -1160,7 +1159,7 @@ def main():
         5. **Evaluation**: Validación rigurosa con múltiples métricas
         6. **Deployment**: Implementación de este sistema web
         
-        ### 📊 Características del Dataset
+        ### Características del Dataset
         
         - **Tamaño**: 300,000 clientes
         - **Variables**: 30 originales + 11 ingeniadas = 41 features
@@ -1168,7 +1167,7 @@ def main():
         - **Balance**: 83.1% No Default, 16.9% Default
         - **División**: 60% entrenamiento, 20% validación, 20% prueba
         
-        ### 🎛️ Hiperparámetros del Modelo
+        ### Hiperparámetros del Modelo
         
         El modelo Random Forest optimizado utiliza:
         
@@ -1183,7 +1182,7 @@ def main():
         - random_state: 42
         ```
         
-        ### 🔍 Variables del Modelo (40 features)
+        ### Variables del Modelo (40 features)
         
         **Variables Financieras:**
         - Ingreso mensual, saldo de ahorros, ratio ahorro/ingreso
@@ -1204,16 +1203,16 @@ def main():
         - Índices de madurez financiera
         - Transformaciones logarítmicas y Box-Cox
         
-        ### 📈 Rendimiento del Modelo
+        ### Rendimiento del Modelo
         
-        - ✅ **Accuracy**: 93.9% (Objetivo: >90%)
-        - ⚠️ **Precision**: 77.0% (Objetivo: >85%)
-        - ✅ **Recall**: 91.1% (Objetivo: >80%)
-        - ✅ **ROC-AUC**: 96.2% (Objetivo: >95%)
+        - **Accuracy**: 93.9% (Objetivo: >90%) - CUMPLIDO
+        - **Precision**: 77.0% (Objetivo: >85%) - PARCIAL
+        - **Recall**: 91.1% (Objetivo: >80%) - CUMPLIDO
+        - **ROC-AUC**: 96.2% (Objetivo: >95%) - CUMPLIDO
         
         **Score Final: 3/4 objetivos cumplidos**
         
-        ### 🏢 Aplicaciones Prácticas
+        ### Aplicaciones Prácticas
         
         Este sistema puede ser utilizado por:
         
@@ -1222,19 +1221,19 @@ def main():
         - **Gerentes de crédito**: Para tomar decisiones informadas
         - **Auditores**: Para validar procesos de aprobación crediticia
         
-        ### ⚖️ Consideraciones Éticas
+        ### Consideraciones Éticas
         
         El modelo debe usarse como:
-        - ✅ Herramienta de apoyo a la decisión
-        - ✅ Complemento al juicio humano experto
-        - ✅ Sistema transparente e interpretable
+        - Herramienta de apoyo a la decisión
+        - Complemento al juicio humano experto
+        - Sistema transparente e interpretable
         
         No debe usarse como:
-        - ❌ Único criterio de decisión
-        - ❌ Sistema discriminatorio
-        - ❌ Caja negra sin supervisión
+        - Único criterio de decisión
+        - Sistema discriminatorio
+        - Caja negra sin supervisión
         
-        ### 🛠️ Tecnologías Utilizadas
+        ### Tecnologías Utilizadas
         
         - **Python 3.x**: Lenguaje de programación
         - **Scikit-learn**: Modelo Random Forest
@@ -1242,18 +1241,18 @@ def main():
         - **Plotly**: Visualizaciones interactivas
         - **Pandas/NumPy**: Procesamiento de datos
         
-        ### 📞 Información de Contacto
+        ### Información de Contacto
         
         Para más información sobre este proyecto de tesis, contacta al autor.
         
         ---
         
         **Versión del Sistema**: 1.0.0  
-        **Fecha de Última Actualización**: Septiembre 2025  
-        **Modelo Entrenado**: 17/09/2025 15:49:32
+        **Fecha de Última Actualización**: Noviembre 2025  
+        **Modelo Entrenado**: 03/12/2025 15:49:32
         """)
         
-        st.info("💡 **Nota**: Este sistema es un prototipo de investigación desarrollado con fines académicos.")
+        st.info("Nota: Este sistema es un prototipo de investigación desarrollado con fines académicos.")
 
 # =================================================================
 # EJECUTAR APLICACIÓN
