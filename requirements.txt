@@ -1,0 +1,25 @@
+# ======================================================
+# DEPENDENCIAS PARA SISTEMA DE CREDIT SCORING
+# Aplicación Streamlit para Despliegue de Modelo
+# ======================================================
+
+# Framework Web
+streamlit==1.28.0
+
+# Procesamiento de Datos - VERSIONES COMPATIBLES CON EL MODELO
+pandas>=2.0.0
+numpy>=1.24.0,<2.0.0
+
+# Machine Learning - VERSION COMPATIBLE CON EL MODELO ENTRENADO
+scikit-learn>=1.6.0
+joblib>=1.3.0
+
+# Visualizaciones
+plotly>=5.17.0
+
+# Análisis Estadístico
+scipy>=1.11.0
+
+# Utilidades
+python-dateutil>=2.8.0
+
