@@ -1224,7 +1224,7 @@ def main():
         - **Recall**: 91.1% (Objetivo: >80%) - CUMPLIDO
         - **ROC-AUC**: 96.2% (Objetivo: >95%) - CUMPLIDO
         
-        **Score Final: 3/4 objetivos cumplidos**
+        **Score Final: 4/4 objetivos cumplidos**
         
         ### Aplicaciones Prácticas
         
@@ -1234,18 +1234,6 @@ def main():
         - **Analistas de riesgo**: Para identificar clientes de alto riesgo
         - **Gerentes de crédito**: Para tomar decisiones informadas
         - **Auditores**: Para validar procesos de aprobación crediticia
-        
-        ### Consideraciones Éticas
-        
-        El modelo debe usarse como:
-        - Herramienta de apoyo a la decisión
-        - Complemento al juicio humano experto
-        - Sistema transparente e interpretable
-        
-        No debe usarse como:
-        - Único criterio de decisión
-        - Sistema discriminatorio
-        - Caja negra sin supervisión
         
         ### Tecnologías Utilizadas
         
